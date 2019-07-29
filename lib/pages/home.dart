@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:improving_flutter_app_ui_2/style/fontStyle.dart';
+import 'package:improving_flutter_app_ui_2/widgets/book.product.dart';
 import 'package:improving_flutter_app_ui_2/widgets/categorys/categorys.listbar.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -27,6 +28,8 @@ class MyHomePage extends StatelessWidget {
         ),
         SizedBox(height: 20),
         CategorysList(),
+        SizedBox(height: 5),
+        BooksListShop(),
       ],
     );
   }
