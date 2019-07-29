@@ -103,6 +103,43 @@ Widget _buildBookItemShop(BuildContext context, int index) {
               ),
             ),
           ),
+//================================
+//  BOTÃO DE AÇÃO >
+//================================
+          Positioned(
+            top: 90,
+            left: 185,
+            child: Center(
+              child: Container(
+                width: 55,
+                height: 55,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(26),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(.2),
+                        offset: Offset(0, 7),
+                        blurRadius: 5,
+                        spreadRadius: -3,
+                      )
+                    ]),
+                child: FlatButton(
+                  child: Icon(Icons.arrow_forward_ios, color: Colors.grey[500]),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(26)),
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => PageReader(),
+                    //   ),
+                    // );
+                  },
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     ),
