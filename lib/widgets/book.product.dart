@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:improving_flutter_app_ui_2/data/book.list.dart';
+import 'package:improving_flutter_app_ui_2/style/fontStyle.dart';
 
 class BooksListShop extends StatelessWidget {
   @override
@@ -49,6 +50,55 @@ Widget _buildBookItemShop(BuildContext context, int index) {
                     offset: Offset(0, 5),
                     blurRadius: 5,
                   )
+                ],
+              ),
+            ),
+          ),
+//================================
+//  BOX DESCRIÇÃO
+//================================
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              margin: EdgeInsets.only(left: 25),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              width: 190,
+              height: 170,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(.1),
+                    offset: Offset(0, 30),
+                    blurRadius: 20,
+                    spreadRadius: -10,
+                  )
+                ],
+              ),
+//================================
+//  DESCRIÇÃO LIVRO
+//================================
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    width: double.infinity,
+                    child: Text(book.title,
+                        style: productTitleStyle, textAlign: TextAlign.left),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    child: Text("By ${book.author}",
+                        style: authorTextStyle, textAlign: TextAlign.left),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 5),
+                      width: double.infinity,
+                      child: Text("${book.pages} Pgs.",
+                          style: categoryStyle, textAlign: TextAlign.left),
+                    ),
+                  ),
                 ],
               ),
             ),
