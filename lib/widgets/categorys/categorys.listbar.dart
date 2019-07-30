@@ -20,27 +20,13 @@ class CategorysList extends StatelessWidget {
 }
 
 Widget _buildItemCategory(String category, int index) {
-  return Align(
-    alignment: Alignment.topCenter,
-    child: Container(
-      height: 30,
-      margin: EdgeInsets.symmetric(horizontal: 5),
-      child: FlatButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        child: Text(category, style: categoryStyle),
-        onPressed: () {},
-      ),
-      decoration: BoxDecoration(
-        color: (index % 2 == 0) ? Colors.grey[200] : Colors.blue[200],
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-              color: Colors.black.withOpacity(.12),
-              blurRadius: 12,
-              offset: Offset(0, 7),
-              spreadRadius: 1)
-        ],
-      ),
+  return Container(
+    alignment: Alignment.center,
+    margin: EdgeInsets.only(right: 10),
+    child: Chip(
+      elevation: 2,
+      backgroundColor: Colors.grey[200],
+      label: Text(category, style: categoryStyle),
     ),
   );
 }
