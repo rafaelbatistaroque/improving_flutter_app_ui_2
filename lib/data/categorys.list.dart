@@ -1,9 +1,9 @@
 List<String> categorys = [
-  "Teologia Histórica",
-  "Teologia Prática",
-  "Apologética",
-  "Teologia Sistemática",
-  "Teologia Bíblica",
-  "Apócrifos",
-  "Missões"
+  "Filosofia",
+  "Economia",
+  "Auto ajuda",
+  "História",
+  "Espiritualidade",
+  "Romance",
+  "Empreendedorismo"
 ];

@@ -91,9 +91,12 @@ Widget _buildBookItemShop(BuildContext context, int index) {
                     child: Text("By ${book.author}",
                         style: authorTextStyle, textAlign: TextAlign.left),
                   ),
-                  Expanded(
+                  Flexible(
+                    fit: FlexFit.tight,
                     child: Container(
-                      margin: EdgeInsets.only(top: 5),
+                      alignment: Alignment.bottomLeft,
+                      // color: Colors.blue,
+                      // margin: EdgeInsets.only(top: 5),
                       width: double.infinity,
                       child: Text("${book.pages} Pgs.",
                           style: categoryStyle, textAlign: TextAlign.left),
