@@ -178,6 +178,19 @@ class _PageAboutBookState extends State<PageAboutBook> {
             ),
           ),
         ),
+        Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              margin: EdgeInsets.only(top: 5),
+              alignment: Alignment.center,
+              width: 120,
+              height: 45,
+              color: Colors.blue,
+              child: FlatButton(
+                child: Text("Leia Agora", style: buttomReadMeStyle),
+                onPressed: () {},
+              ),
+            )),
       ],
     );
   }

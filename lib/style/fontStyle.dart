@@ -21,3 +21,5 @@ final TextStyle speakerDescStyle =
     TextStyle(fontSize: 16, color: Colors.grey, fontFamily: "Poppins-Light");
 final TextStyle ratingStyle =
     TextStyle(fontSize: 11, color: Colors.amber, fontFamily: "Poppins-Bold");
+final TextStyle buttomReadMeStyle =
+    TextStyle(fontSize: 15, color: Colors.white, fontFamily: "Poppins-Regular");
