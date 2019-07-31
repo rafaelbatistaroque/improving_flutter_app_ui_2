@@ -35,23 +35,26 @@ Widget _buildBookItemShop(BuildContext context, int index) {
 //================================
           Align(
             alignment: Alignment.centerRight,
-            child: Container(
-              margin: EdgeInsets.only(right: 15),
-              width: 145,
-              height: 210,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: ExactAssetImage(book.image),
-                  fit: BoxFit.cover,
+            child: Hero(
+              tag: book.image,
+              child: Container(
+                margin: EdgeInsets.only(right: 15),
+                width: 145,
+                height: 210,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: ExactAssetImage(book.image),
+                    fit: BoxFit.cover,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(.3),
+                      offset: Offset(0, 5),
+                      blurRadius: 5,
+                    )
+                  ],
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(.3),
-                    offset: Offset(0, 5),
-                    blurRadius: 5,
-                  )
-                ],
               ),
             ),
           ),

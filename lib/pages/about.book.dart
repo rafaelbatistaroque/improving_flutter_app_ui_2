@@ -30,6 +30,7 @@ class _PageAboutBookState extends State<PageAboutBook> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildBodyAbout(),
+      bottomNavigationBar: _buildButtomReadMe(),
     );
   }
 
@@ -52,7 +53,7 @@ class _PageAboutBookState extends State<PageAboutBook> {
                     ? Icon(Icons.bookmark, color: Colors.black)
                     : Icon(Icons.bookmark_border, color: Colors.grey[500]),
                 onPressed: () {
-                  setState(() => _stateBookMark = !(_stateBookMark));
+                  setState(() => _stateBookMark = !_stateBookMark);
                 },
               ),
             ],
@@ -66,22 +67,25 @@ class _PageAboutBookState extends State<PageAboutBook> {
 //================================
 //  BOOK
 //================================
-              Container(
-                width: 145,
-                height: 210,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: ExactAssetImage(widget.image),
-                    fit: BoxFit.cover,
+              Hero(
+                tag: widget.image,
+                child: Container(
+                  width: 145,
+                  height: 210,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: ExactAssetImage(widget.image),
+                      fit: BoxFit.cover,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(.3),
+                        offset: Offset(0, 5),
+                        blurRadius: 5,
+                      )
+                    ],
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(.3),
-                      offset: Offset(0, 5),
-                      blurRadius: 5,
-                    )
-                  ],
                 ),
               ),
 //================================
@@ -149,7 +153,7 @@ class _PageAboutBookState extends State<PageAboutBook> {
                     : Icon(Icons.favorite_border),
                 onPressed: () {
                   setState(() {
-                    _stateFavorite = !(_stateFavorite);
+                    _stateFavorite = !_stateFavorite;
                   });
                 },
               ),
@@ -178,20 +182,25 @@ class _PageAboutBookState extends State<PageAboutBook> {
             ),
           ),
         ),
-        Align(
-            alignment: Alignment.centerRight,
-            child: Container(
-              margin: EdgeInsets.only(top: 5),
-              alignment: Alignment.center,
-              width: 120,
-              height: 45,
-              color: Colors.blue,
-              child: FlatButton(
-                child: Text("Leia Agora", style: buttomReadMeStyle),
-                onPressed: () {},
-              ),
-            )),
       ],
     );
   }
+}
+
+_buildButtomReadMe() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: <Widget>[
+      Container(
+        alignment: Alignment.center,
+        width: 120,
+        height: 45,
+        color: Colors.blue,
+        child: FlatButton(
+          child: Text("Ler Agora", style: buttomReadMeStyle),
+          onPressed: () {},
+        ),
+      ),
+    ],
+  );
 }
