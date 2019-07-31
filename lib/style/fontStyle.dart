@@ -19,3 +19,5 @@ final TextStyle bottomBarItemStyle =
     TextStyle(fontSize: 18, color: Colors.white, fontFamily: "Poppins-Bold");
 final TextStyle speakerDescStyle =
     TextStyle(fontSize: 16, color: Colors.grey, fontFamily: "Poppins-Light");
+final TextStyle ratingStyle =
+    TextStyle(fontSize: 11, color: Colors.amber, fontFamily: "Poppins-Bold");

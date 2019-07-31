@@ -4,7 +4,7 @@ class Book {
   int pages;
   String author;
   double price;
-  String content;
+  String about;
 
   Book(
       {this.image,
@@ -12,5 +12,5 @@ class Book {
       this.pages,
       this.author,
       this.price,
-      this.content});
+      this.about});
 }

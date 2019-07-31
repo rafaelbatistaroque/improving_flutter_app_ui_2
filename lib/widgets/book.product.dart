@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:improving_flutter_app_ui_2/data/book.list.dart';
+import 'package:improving_flutter_app_ui_2/pages/about.book.dart';
 import 'package:improving_flutter_app_ui_2/style/fontStyle.dart';
 
 class BooksListShop extends StatelessWidget {
@@ -91,16 +92,20 @@ Widget _buildBookItemShop(BuildContext context, int index) {
                     child: Text("By ${book.author}",
                         style: authorTextStyle, textAlign: TextAlign.left),
                   ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    child: Container(
-                      alignment: Alignment.bottomLeft,
-                      // color: Colors.blue,
-                      // margin: EdgeInsets.only(top: 5),
-                      width: double.infinity,
-                      child: Text("${book.pages} Pgs.",
-                          style: categoryStyle, textAlign: TextAlign.left),
-                    ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Icon(Icons.star, color: Colors.orangeAccent, size: 15),
+                      Icon(Icons.star, color: Colors.orangeAccent, size: 15),
+                      Icon(Icons.star, color: Colors.orangeAccent, size: 15),
+                      Icon(Icons.star_half,
+                          color: Colors.orangeAccent, size: 15),
+                      Icon(Icons.star_border,
+                          color: Colors.orangeAccent, size: 15),
+                      SizedBox(width: 10),
+                      Text("4,5", style: ratingStyle),
+                    ],
                   ),
                 ],
               ),
@@ -132,12 +137,18 @@ Widget _buildBookItemShop(BuildContext context, int index) {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(26)),
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => PageReader(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PageAboutBook(
+                            image: book.image,
+                            title: book.title,
+                            pages: book.pages,
+                            author: book.author,
+                            price: book.price,
+                            about: book.about),
+                      ),
+                    );
                   },
                 ),
               ),
